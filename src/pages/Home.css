@@ -138,3 +138,128 @@
 @media (prefers-reduced-motion: reduce) {
   .cp-home * { transition: none !important; }
 }
+
+
+/* CP HERO V2 */
+@media (min-width: 901px) {
+  .cp-hero-grid {
+    grid-template-columns: 1.15fr .85fr;
+    gap: 8%;
+  }
+
+  .cp-hero-visual {
+    max-width: 440px;
+    margin-left: auto;
+    width: 100%;
+  }
+
+  .cp-portrait-frame {
+    max-height: 510px;
+    aspect-ratio: 4 / 4.8;
+    border-radius: 26px;
+    border: 1px solid rgba(101,184,255,.22);
+    box-shadow: 0 28px 85px rgba(0,0,0,.24);
+  }
+
+  .cp-portrait-frame img {
+    object-fit: cover;
+    object-position: center 16%;
+  }
+
+  .cp-visual-caption {
+    padding-top: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cp-portrait-frame {
+    border-radius: 22px;
+  }
+}
+
+
+/* CP SIGNATURE V2 */
+.cp-visual-caption {
+  justify-content: flex-start;
+  gap: 22px;
+  padding: 24px 8px 0;
+}
+
+.cp-monogram {
+  flex-shrink: 0;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.cp-visual-caption > span:last-child {
+  border-left: 1px solid rgba(101,184,255,.35);
+  padding-left: 22px;
+  color: #C5D5E7;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: .08em;
+}
+
+@media (min-width: 901px) {
+  .cp-hero-bottom {
+    margin-top: 65px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cp-visual-caption {
+    gap: 16px;
+  }
+
+  .cp-monogram {
+    font-size: 40px;
+  }
+
+  .cp-visual-caption > span:last-child {
+    padding-left: 16px;
+    font-size: 10px;
+  }
+}
+
+
+/* CP PORTRAIT FINISH */
+.cp-portrait-frame {
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 24px 65px rgba(0,0,0,.20);
+}
+
+.cp-visual-caption {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 25px 0 0;
+}
+
+.cp-monogram {
+  font-size: 46px;
+  line-height: 1;
+}
+
+.cp-visual-caption > span:last-child {
+  border-left: 1px solid rgba(101,184,255,.35);
+  padding-left: 24px;
+  font-size: 11px;
+  line-height: 1.75;
+  letter-spacing: .07em;
+}
+
+@media (max-width: 700px) {
+  .cp-visual-caption {
+    gap: 16px;
+  }
+
+  .cp-monogram {
+    font-size: 39px;
+  }
+
+  .cp-visual-caption > span:last-child {
+    padding-left: 16px;
+    font-size: 9px;
+  }
+}
