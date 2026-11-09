@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import './i18n';
 import './index.css';
@@ -81,7 +81,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <DocumentLanguage />
       <ScrollToTop />
       <Navbar />
@@ -109,6 +109,6 @@ export default function App() {
         pauseOnHover
         theme="dark"
       />
-    </BrowserRouter>
+    </HashRouter>
   );
 }

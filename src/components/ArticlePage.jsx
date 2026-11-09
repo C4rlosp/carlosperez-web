@@ -1,3 +1,4 @@
+import { publicAsset } from '../utils/publicAsset';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +37,7 @@ function Block({ block }) {
       return (
         <div className="article-image-container">
           <div className={`article-image-wrapper${block.terminal ? ' terminal-style' : ''}`}>
-            <img src={block.src} alt={block.alt || ''} className="article-img" />
+            <img src={publicAsset(block.src)} alt={block.alt || ''} className="article-img" />
           </div>
           {block.caption && <p className="image-caption">{block.caption}</p>}
           {block.subcaption && <p className="image-caption-sub">{block.subcaption}</p>}

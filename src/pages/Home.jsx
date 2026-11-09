@@ -1,3 +1,4 @@
+import { publicAsset } from '../utils/publicAsset';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { FaNetworkWired, FaShieldAlt, FaCertificate } from 'react-icons/fa';
@@ -46,7 +47,7 @@ export default function Home() {
             <div className="hero-avatar fade-up fade-up-3">
               <div className="hero-avatar-placeholder">
                 <img
-                  src="/portrait-carlos.webp"
+                  src={publicAsset("/portrait-carlos.webp")}
                   alt="Carlos Pérez"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -107,7 +108,7 @@ export default function Home() {
           <Link to="/article/rpki-ghost" className="article-card-link">
             <div className="article-card-featured">
               <div className="article-card-image">
-                <img src="/rpki-ghost-cover.png" alt="RPKI Ghost Analysis" />
+                <img src={publicAsset("/rpki-ghost-cover.png")} alt="RPKI Ghost Analysis" />
               </div>
 
               <div className="article-card-info">

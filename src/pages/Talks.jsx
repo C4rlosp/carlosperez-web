@@ -1,3 +1,4 @@
+import { publicAsset } from '../utils/publicAsset';
 import { useTranslation } from 'react-i18next';
 
 export default function Talks() {
@@ -41,7 +42,7 @@ export default function Talks() {
                     {talk.images.map((img, idx) => (
                       <div key={idx} className="talk-image-card">
                         <img 
-                          src={img} 
+                          src={publicAsset(img)} 
                           alt={`${talk.title} preview`} 
                           loading="lazy"
                         />
