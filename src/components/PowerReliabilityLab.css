@@ -1,0 +1,104 @@
+.prl{--prl-ink:#0b1628;--prl-blue:#0878d8;background:#0b1628;color:#f6f8fb;padding:clamp(55px,7vw,100px) max(28px,calc((100vw - 1200px)/2));font-family:Inter,sans-serif}
+.prl *{box-sizing:border-box}
+.prl__intro{display:flex;justify-content:space-between;align-items:end;gap:42px;margin-bottom:32px}
+.prl__intro>div:first-child{max-width:700px}
+.prl__eyebrow{font:600 11px/1.6 'JetBrains Mono',monospace;letter-spacing:.14em;color:#38bdf8}
+.prl h3{font-family:Manrope,sans-serif;font-size:clamp(30px,3.6vw,48px);line-height:1.13;letter-spacing:-.05em;margin:16px 0}
+.prl__intro p{color:#b7c9da;font-size:16px;line-height:1.8}
+.prl__modes{display:flex;flex-wrap:wrap;gap:7px;max-width:490px}
+.prl__modes button{border:1px solid #385571;background:#142b49;color:#c7d7e5;border-radius:8px;padding:12px 14px;font:600 12px Inter,sans-serif;cursor:pointer;transition:background .2s,border-color .2s}
+.prl__modes button.is-selected{background:#0878d8;border-color:#38bdf8;color:#fff}
+.prl button:focus-visible{outline:3px solid #38bdf8;outline-offset:3px}
+.prl__stage{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.85fr);border:1px solid #294963;border-radius:16px;overflow:hidden;background:#10243a}
+.prl__visual{display:flex;flex-direction:column;min-width:0;background:radial-gradient(ellipse at 55% 50%,#1b3b58,#0e2137 80%)}
+.prl__diagram{display:flex;align-items:center;flex:1;min-height:330px}
+.prl__diagram svg{display:block;width:100%;height:auto}
+.prl__wire path{fill:none;stroke:#36516a;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+.prl__energy path{fill:none;stroke-width:4;stroke-dasharray:9 13;stroke-linecap:round;stroke-linejoin:round;animation:prl-flow 1.3s linear infinite}
+.prl__energy--battery path{stroke-dasharray:8 11;animation-direction:reverse}
+.prl__broken{stroke:#ff9b85;stroke-width:3;stroke-dasharray:5 11;fill:none}
+.prl__pulse{animation:prl-pulse 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.prl__pulse--battery{animation-duration:1.15s}
+.prl__device rect{fill:#173654;stroke:#7bb4d9;stroke-width:2}
+.prl__device--active rect{stroke:#2bd7b5}
+.prl__device--fault rect{fill:#56342f;stroke:#ff9b85}
+.prl__symbol{stroke:#7fd2ff;stroke-width:5;fill:none;stroke-linecap:round}
+.prl__symbol--green{stroke:#28d7ba;stroke-width:7}
+.prl__symbol--fault{stroke:#ff9b85;stroke-width:6}
+.prl__alarm{animation:prl-pulse 1.2s ease-in-out infinite}
+.prl__battery-fill{transition:y .55s linear,height .55s linear}
+.prl__legend{display:flex;gap:18px;flex-wrap:wrap;padding:0 22px 18px;color:#9fb8ce;font-size:11px}
+.prl__legend span{display:flex;align-items:center;gap:7px}
+.prl__legend-dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.prl__legend-dot--green{background:#2bd7b5}.prl__legend-dot--orange{background:#ffb368}.prl__legend-dot--red{background:#ff9b85}
+.prl__detail{border-left:1px solid #294963;padding:30px 25px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.prl__status{display:flex;align-items:center;gap:12px;color:#6de4ce;font-weight:650;font-size:13px}
+.prl__indicator{flex:none;height:10px;width:10px;border-radius:50%;background:#28d7ba;box-shadow:0 0 0 5px #28d7ba22}
+.prl__indicator.is-failed{background:#ff9b85;box-shadow:0 0 0 5px #ff9b8522}
+.prl--mode-1 .prl__status{color:#ffb7a8}
+.prl__detail>strong{font-family:Manrope,sans-serif;font-size:clamp(19px,2vw,24px);line-height:1.3;margin:15px 0 4px}
+.prl__detail>p{color:#bfd0df;font-size:14px;line-height:1.75;margin:8px 0 20px}
+.prl__telemetry{padding:18px;border:1px solid #34546e;border-radius:12px;background:#17334e}
+.prl__soc-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#a8c3d7;font-size:12px}
+.prl__soc-heading b{font-size:24px;color:#f6f8fb;font-variant-numeric:tabular-nums}
+.prl__soc-track{height:9px;margin:12px 0 18px;background:#34536c;border-radius:20px;overflow:hidden}
+.prl__soc-track>div{height:100%;border-radius:20px;background:#2bd7b5;transition:width .55s linear}
+.prl--mode-1 .prl__soc-track>div{background:#ffb368}
+.prl__metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.prl__metrics>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.prl__metrics span{font-size:11px;color:#9db9ce}
+.prl__metrics b{font-size:11px;line-height:1.4;color:#e9f5ff;overflow-wrap:anywhere}
+.prl__metrics b.prl__warning{color:#ffb7a8}
+.prl__flow-caption{margin-top:17px;padding-top:14px;border-top:1px solid #34546e}
+.prl__flow-caption>span{font-size:11px;color:#9db9ce}
+.prl__flow-caption p{margin:7px 0 0;font-size:12px;line-height:1.6;color:#e5f4ff;font-weight:650}
+.prl__lesson{border-left:3px solid #38bdf8;margin-top:22px;padding-left:15px;font-weight:650;font-size:13px;line-height:1.6}
+.prl__reset{align-self:flex-start;margin-top:19px;border:1px solid #56748b;background:transparent;color:#dcebf8;border-radius:8px;padding:10px 14px;font:600 12px Inter,sans-serif;cursor:pointer}
+.prl__reset:hover{border-color:#38bdf8;background:#1c3c58}
+.prl__note{margin:15px 0 0;color:#91a9bd;font-size:12px;line-height:1.6}
+@keyframes prl-flow{to{stroke-dashoffset:-44}}
+@keyframes prl-pulse{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.3)}}
+@media(max-width:1050px){.prl__intro{flex-direction:column;align-items:stretch}.prl__modes{max-width:none}}
+@media(max-width:800px){.prl__stage{grid-template-columns:1fr}.prl__diagram{min-height:240px}.prl__detail{border-left:0;border-top:1px solid #294963;padding:26px}}
+@media(max-width:520px){.prl{padding-inline:20px}.prl__modes button{flex:1 1 145px}.prl__legend{gap:11px;padding:0 12px 15px}.prl__metrics{gap:5px}.prl__diagram{min-height:190px}.prl__detail{padding:21px}}
+@media(prefers-reduced-motion:reduce){.prl__energy path,.prl__pulse,.prl__alarm{animation:none}.prl__modes button,.prl__battery-fill,.prl__soc-track>div{transition:none}}
+
+/* RBS site: synchronized with the existing battery simulation */
+.prl__rbs-scene{margin-top:30px;border:1px solid #315570;border-radius:17px;background:#10263d;overflow:hidden}
+.prl__rbs-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:27px 30px 20px}
+.prl__rbs-heading h4{font-family:Manrope,sans-serif;font-size:clamp(23px,2.5vw,31px);line-height:1.2;letter-spacing:-.035em;margin:9px 0}
+.prl__rbs-heading p{font-size:14px;line-height:1.7;color:#b9cfdf;margin:0;max-width:740px}
+.prl__rbs-status{display:flex;align-items:center;gap:10px;white-space:nowrap;color:#6de4ce;font-size:13px;font-weight:700}
+.prl__rbs-led{display:inline-block;width:10px;height:10px;border-radius:50%;background:#2bd7b5;box-shadow:0 0 0 5px #2bd7b522}
+.prl__rbs-status.is-down{color:#ffb7a8}.prl__rbs-status.is-down .prl__rbs-led{background:#ff9b85;box-shadow:0 0 0 5px #ff9b8522}
+.prl__rbs-visual{padding:0 18px}.prl__rbs-visual svg{display:block;width:100%;height:auto;max-height:450px}
+.prl__rbs-radiation{transform-box:fill-box;transform-origin:center;animation:prl-rbs-breathe 2.5s ease-in-out infinite}
+.prl__rbs-coverage{animation:prl-rbs-flow 2.4s linear infinite}.prl__rbs-coverage--secondary{animation-direction:reverse;animation-duration:3s}
+.prl__rbs-microwave{animation:prl-rbs-flow 1.9s linear infinite}.prl__rbs-feeder{animation:prl-rbs-flow 1.5s linear infinite}
+.prl__rbs-phone-signal{animation:prl-rbs-breathe 1.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.prl__rbs-scene--down .prl__rbs-radiation,.prl__rbs-scene--down .prl__rbs-coverage,.prl__rbs-scene--down .prl__rbs-microwave,.prl__rbs-scene--down .prl__rbs-feeder,.prl__rbs-scene--down .prl__rbs-phone-signal{animation:none;opacity:.12;stroke:#ff9b85}
+.prl__rbs-footer{display:flex;gap:30px;align-items:center;padding:18px 30px 24px;border-top:1px solid #294963;flex-wrap:wrap}
+.prl__rbs-footer>div{display:flex;flex-direction:column;gap:5px}.prl__rbs-footer span{font-size:11px;color:#9db9ce}.prl__rbs-footer strong{font-size:14px;color:#e9f5ff}.prl__rbs-footer p{margin:0 0 0 auto;max-width:540px;font-size:11px;line-height:1.6;color:#9db9ce}
+@keyframes prl-rbs-flow{to{stroke-dashoffset:-92}}@keyframes prl-rbs-breathe{0%,100%{opacity:.3}50%{opacity:1}}
+@media(max-width:800px){.prl__rbs-heading{flex-direction:column;align-items:flex-start}.prl__rbs-status{white-space:normal}.prl__rbs-footer p{margin-left:0}}
+@media(max-width:520px){.prl__rbs-heading{padding:22px 18px 16px}.prl__rbs-visual{padding:0 5px;overflow-x:auto}.prl__rbs-visual svg{min-width:560px}.prl__rbs-footer{padding:16px 18px}}
+@media(prefers-reduced-motion:reduce){.prl__rbs-radiation,.prl__rbs-coverage,.prl__rbs-microwave,.prl__rbs-feeder,.prl__rbs-phone-signal{animation:none}}
+
+/* Separate amber DC feed from blue RF coverage. */
+.prl__rbs-power{animation:prl-rbs-flow 1.5s linear infinite}
+.prl__rbs-scene--down .prl__rbs-power{animation:none;opacity:0}
+@media(prefers-reduced-motion:reduce){.prl__rbs-power{animation:none}}
+
+/* Guided automatic demos: local to power and DWDM labs */
+.cp-autolab-story{margin:18px 0 22px;padding:20px 23px;border:1px solid rgba(91,204,218,.36);border-radius:15px;background:linear-gradient(110deg,rgba(15,56,79,.88),rgba(9,34,54,.9));color:#e3f2fa}
+.cp-autolab-story__head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:13px;font-size:10px;font-weight:800;letter-spacing:.14em;color:#62dbe5}
+.cp-autolab-live{color:#66e6cb}.cp-autolab-paused{color:#f2be84}
+.cp-autolab-story>strong{display:block;font-size:clamp(16px,2vw,21px);line-height:1.35}
+.cp-autolab-story>p{margin:9px 0 18px;color:#b6ccdc;font-size:13px;line-height:1.65;max-width:850px}
+.cp-autolab-progress{display:flex;gap:7px;margin-bottom:16px}
+.cp-autolab-progress span{flex:1;height:4px;border-radius:5px;background:#284d65;transition:background .4s,box-shadow .4s}
+.cp-autolab-progress span.is-active{background:#62dbe5;box-shadow:0 0 13px rgba(98,219,229,.45)}
+.cp-autolab-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.cp-autolab-buttons button{border:1px solid #46728a;border-radius:9px;background:#173b53;color:#e0f0fa;font:inherit;font-size:12px;font-weight:700;padding:10px 14px;cursor:pointer}
+.cp-autolab-buttons button:hover,.cp-autolab-buttons button:focus-visible{border-color:#62dbe5;background:#20536b}
+@media(max-width:600px){.cp-autolab-story{padding:15px}.cp-autolab-story__head{font-size:9px;letter-spacing:.08em}}

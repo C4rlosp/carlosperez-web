@@ -19,14 +19,20 @@ export default function Navbar() {
   }, [location]);
 
   const toggleLang = () => {
-    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
+    const nextLanguage = i18n.resolvedLanguage?.startsWith('en') ? 'es' : 'en';
+    i18n.changeLanguage(nextLanguage);
+    try {
+      localStorage.setItem('lang', nextLanguage);
+    } catch {
+      // Language still changes if browser storage is unavailable.
+    }
   };
 
   const links = [
     { to: '/', label: t('nav.home') },
+    { to: '/history', label: t('nav.history') },
     { to: '/projects', label: t('nav.projects') },
-    { to: '/talks', label: t('nav.talks') },
-    { to: '/articles', label: t('nav.articles') },
+    { to: '/ideas', label: t('nav.ideas') },
     { to: '/contact', label: t('nav.contact') },
   ];
 
@@ -34,8 +40,13 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner">
-          <NavLink to="/" className="navbar-logo">
-            <span>&lt;</span>Carlos Pérez<span>/&gt;</span>
+          <NavLink to="/" className="navbar-logo cp-brand-logo" aria-label="Carlos Pérez - Inicio">
+            <img
+              src={`${import.meta.env.BASE_URL}brand/logos/cp-isotipo-limpio.png`}
+              alt=""
+              className="cp-brand-symbol"
+            />
+            <span className="cp-brand-name">Carlos Pérez</span>
           </NavLink>
 
           <ul className="navbar-links">
@@ -60,16 +71,23 @@ export default function Navbar() {
           <button
             className={`hamburger ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={i18n.language === 'es' ? 'Abrir o cerrar menú' : 'Toggle menu'}
+            aria-expanded={menuOpen}
+            aria-controls="cp-mobile-navigation"
           >
             <span /><span /><span />
           </button>
         </div>
       </nav>
 
-      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+      <div id="cp-mobile-navigation" className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         {links.map(link => (
-          <NavLink key={link.to} to={link.to} end={link.to === '/'}>
+          <NavLink
+            key={link.to}
+            to={link.to}
+            end={link.to === '/'}
+            className={({ isActive }) => isActive ? 'active' : ''}
+          >
             {link.label}
           </NavLink>
         ))}
