@@ -25,23 +25,6 @@ function ScrollToTop() {
   return null;
 }
 
-// Read browser preferences only after React has hydrated the server HTML.
-// Changing i18n before hydration finishes can cause React #418/#423.
-function RestoreSavedLanguage() {
-  const { i18n } = useTranslation();
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem('lang');
-      if ((saved === 'es' || saved === 'en') && saved !== i18n.language) {
-        i18n.changeLanguage(saved);
-      }
-    } catch {
-      // Storage may be unavailable; Spanish remains the default.
-    }
-  }, [i18n]);
-  return null;
-}
-
 function DocumentLanguage() {
   const { i18n } = useTranslation();
 
@@ -56,7 +39,7 @@ function PageMetadata() {
   const { pathname } = useLocation();
   const routePath = pathname.replace(/\/$/, '') || '/';
   const { i18n } = useTranslation();
-  const en = i18n.resolvedLanguage?.startsWith('en');
+  const en = i18n.language?.startsWith('en');
   useEffect(() => {
     const metadata = {
       '/': en
@@ -79,7 +62,12 @@ function PageMetadata() {
       ? ['Carlos Pérez | Technology & Infrastructure', 'Technology, infrastructure, and engineering experience.']
       : ['Carlos Pérez | Tecnología e infraestructura', 'Tecnología, infraestructura y experiencia en ingeniería.']);
     document.title = title;
-    const canonicalUrl = `https://carlosperez.cr${routePath === '/' ? '/' : `${routePath}/`}`;
+    const prefix = en ? '/en' : '';
+    const canonicalUrl = `https://carlosperez.cr${prefix}${routePath === '/' ? '/' : `${routePath}/`}`;
+    const esUrl = `https://carlosperez.cr${routePath === '/' ? '/' : `${routePath}/`}`;
+    const enUrl = `https://carlosperez.cr/en${routePath === '/' ? '/' : `${routePath}/`}`;
+    document.querySelector('link[rel="alternate"][hreflang="es"]')?.setAttribute('href', esUrl);
+    document.querySelector('link[rel="alternate"][hreflang="en"]')?.setAttribute('href', enUrl);
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl);
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);
     for (const [selector, attribute] of [
@@ -143,7 +131,6 @@ function Footer() {
 export function AppContent() {
   return (
     <>
-      <RestoreSavedLanguage />
       <DocumentLanguage />
       <PageMetadata />
       <ScrollToTop />
@@ -179,5 +166,6 @@ export function AppContent() {
 }
 
 export default function App() {
-  return <BrowserRouter><AppContent /></BrowserRouter>;
+  const basename = typeof window !== 'undefined' && /^\/en(?:\/|$)/.test(window.location.pathname) ? '/en' : '/';
+  return <BrowserRouter basename={basename}><AppContent /></BrowserRouter>;
 }

@@ -34,7 +34,7 @@ function Block({ block, index }) {
 export default function ArticlePage({ articleKey }) {
   const { t, i18n } = useTranslation();
   const content = t(`${articleKey}.content`, { returnObjects: true });
-  const en = i18n.resolvedLanguage?.startsWith('en');
+  const en = i18n.language?.startsWith('en');
   const title = `${t(`${articleKey}.title_part1`)}${t(`${articleKey}.title_part2`)}`;
   const sections = Array.isArray(content) ? content.map((block, index) => ({ ...block, index })).filter(block => block.type === 'h2' || block.type === 'h3') : [];
 
