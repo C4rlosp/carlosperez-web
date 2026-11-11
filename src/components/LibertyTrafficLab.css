@@ -1,0 +1,60 @@
+.cp-lab{background:#0a192b;color:#f4f9ff;padding:clamp(28px,5vw,72px);border-top:1px solid #284461;border-bottom:1px solid #284461;font-family:inherit}
+.cp-lab-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:end;margin:0 auto 30px;max-width:1320px}
+.cp-lab-kicker{font-size:11px!important;font-weight:700;letter-spacing:.18em;color:#53b8ff!important;margin:0 0 18px!important}
+.cp-lab-head h3{font-size:clamp(28px,3.2vw,46px);line-height:1.14;letter-spacing:-.04em;max-width:760px;margin:0 0 15px;color:#fff}
+.cp-lab-head p:not(.cp-lab-kicker){color:#afc6da;font-size:15px;line-height:1.75;max-width:730px;margin:0}
+.cp-lab-controls{display:flex;gap:6px;background:#132c46;padding:6px;border:1px solid #31506b;border-radius:12px;flex-wrap:wrap}
+.cp-lab-controls button{appearance:none;border:0;background:transparent;color:#c3d7e7;border-radius:8px;padding:12px 14px;font-family:inherit;font-weight:600;font-size:12px;cursor:pointer;transition:background .2s,color .2s}
+.cp-lab-controls button:hover{background:#264662}.cp-lab-controls button.is-selected{background:#087fdf;color:#fff;box-shadow:0 3px 14px #0004}
+.cp-lab-stage{display:grid;grid-template-columns:minmax(0,1fr) 285px;min-height:460px;max-width:1320px;margin:auto;border:1px solid #31506b;border-radius:15px;overflow:hidden;background:#0b1c31}
+.cp-lab-flow{height:460px;min-width:0;position:relative}.cp-lab-flow .react-flow{background:radial-gradient(ellipse at 50% 30%,#173754 0%,#0b1c31 72%)}
+.cp-lab-flow .react-flow__attribution{background:#12263a;color:#90a6b9}.cp-lab-flow .react-flow__attribution a{color:#9ec9e8}
+.cp-lab-flow .react-flow__controls{background:#18324b;border:1px solid #42617b;box-shadow:none}.cp-lab-flow .react-flow__controls-button{background:#18324b;color:#fff;border-color:#42617b}.cp-lab-flow .react-flow__controls-button svg{fill:#d4e9f8}
+.cp-lab-node{display:flex;align-items:center;gap:10px;min-width:124px;padding:12px;border-radius:11px;border:1px solid #6387a6;background:#18314c;color:#fff;box-shadow:0 12px 28px #0005;transition:border-color .25s,box-shadow .25s}
+.cp-lab-node.is-active{border-color:#39d6b0;box-shadow:0 0 0 2px #39d6b026,0 12px 28px #0005}.cp-lab-node--core{background:#123c61}.cp-lab-node--access{background:#164363}
+.cp-lab-node-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:8px;background:#244d6c;color:#7dd5ff;font-size:20px}.cp-lab-node.is-active .cp-lab-node-icon{color:#65efce}
+.cp-lab-node-text{display:flex;flex-direction:column;gap:3px}.cp-lab-node-text strong{font-size:12px;white-space:nowrap}.cp-lab-node-text small{font-size:9px;color:#a7c2d9;white-space:nowrap}.cp-lab-node .react-flow__handle{width:5px;height:5px;opacity:0;pointer-events:none}
+.cp-lab-panel{border-left:1px solid #31506b;padding:28px 23px;display:flex;flex-direction:column;gap:20px;background:#10263d}
+.cp-lab-status{display:flex;align-items:center;gap:9px;color:#7aefce;font-size:12px;font-weight:700}.cp-lab-status i{width:9px;height:9px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}.cp-lab-status.is-failure{color:#ff9b8d}
+.cp-lab-panel>p{color:#c1d4e5;font-size:13px;line-height:1.7;margin:0}.cp-lab-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cp-lab-metrics>div{border:1px solid #35536d;border-radius:9px;padding:13px;background:#17324d;display:flex;flex-direction:column;gap:7px}.cp-lab-metrics span,.cp-lab-path-label{font-size:10px;letter-spacing:.07em;color:#a4bdd2}.cp-lab-metrics strong{font-size:26px;color:#fff}.cp-lab-path{font-size:12px;line-height:1.8;color:#e3f6ff;font-weight:600;overflow-wrap:anywhere;margin-top:-12px}.cp-lab-reset{margin-top:auto;border:1px solid #52738f;background:transparent;color:#e7f5ff;padding:12px;border-radius:8px;cursor:pointer;font-weight:600}.cp-lab-reset:hover{background:#1d425f}
+.cp-lab-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;max-width:1320px;margin:20px auto 0}.cp-lab-bottom p{color:#9db8cd;font-size:11px;margin:0}.cp-lab-legend{display:flex;gap:18px;flex-wrap:wrap}.cp-lab-legend span{display:flex;gap:7px;align-items:center;font-size:11px;color:#b7cce0}.cp-lab-legend i{display:block;width:22px;border-top:3px solid #39d6b0}.cp-lab-legend i.available{border-color:#587895}.cp-lab-legend i.down{border-color:#f58a83;border-top-style:dashed}.cp-lab-disclaimer{max-width:1320px;margin:14px auto 0;color:#819bb2;font-size:11px;line-height:1.6}
+.cp-lab button:focus-visible{outline:3px solid #7dd5ff;outline-offset:3px}
+@media(max-width:1100px){.cp-lab-head{grid-template-columns:1fr}.cp-lab-stage{grid-template-columns:minmax(0,1fr) 245px}}
+@media(max-width:720px){.cp-lab{padding:40px 16px}.cp-lab-controls{width:100%}.cp-lab-controls button{flex:1 1 120px}.cp-lab-stage{grid-template-columns:1fr}.cp-lab-flow{height:340px}.cp-lab-panel{border-left:0;border-top:1px solid #31506b;padding:22px}.cp-lab-bottom{align-items:flex-start;flex-direction:column}.cp-lab-head{gap:20px}}
+@media(prefers-reduced-motion:reduce){.cp-lab-flow .react-flow__edge.animated path{animation:none!important}.cp-lab-node,.cp-lab-controls button{transition:none}}
+
+/* v3: two-stage failure and automatic failover */
+.cp-lab-controls button[aria-pressed="true"]{background:#087fdf;color:#fff}
+@media(prefers-reduced-motion:reduce){.cp-lab-flow .react-flow__edge.animated path{animation:none!important}}
+
+/* Optical transport is not an IP router: differentiated photonic node. */
+.cp-lab-node--optical{background:linear-gradient(135deg,#103e55,#155a61);border-color:#55d9dc;min-width:148px;box-shadow:0 0 0 1px #48c9d51c,0 12px 28px #0005}
+.cp-lab-node--optical .cp-lab-node-icon{background:#0e344c;color:#75f4e2;font-size:27px;transform:rotate(0deg)}
+.cp-lab-node--optical .cp-lab-node-text strong{letter-spacing:.08em}
+.cp-lab-node--optical .cp-lab-node-text small{color:#b1e4e5}
+.cp-lab-flow .react-flow__edge.animated path{stroke-dasharray:8 7}
+
+/* v4 — rutas separadas y transporte DWDM visualmente explícito */
+.cp-lab-node--optical{min-width:166px;min-height:72px;padding:13px 16px;background:linear-gradient(125deg,#0e3a55,#14546a);border:1.5px solid #70dce8;box-shadow:0 0 0 1px #70dce81c,0 12px 30px #0006}
+.cp-lab-node--optical .cp-lab-node-icon{width:43px;height:43px;flex:none;background:#10344f;color:#8fe8ff}
+.cp-lab-prism{width:36px;height:34px;filter:drop-shadow(0 0 5px #63cfff70)}
+.cp-lab-node--optical.is-active{border-color:#71e5f2;box-shadow:0 0 0 2px #71e5f225,0 0 25px #55cde320}
+.cp-lab-node--optical.is-down{border-color:#ff817d;background:linear-gradient(125deg,#402b40,#20354d);box-shadow:0 0 0 2px #ff817d20}
+.cp-lab-node--optical.is-down .cp-lab-node-icon{color:#ff9d97}
+.cp-lab-link--optical.is-active path.react-flow__edge-path{filter:drop-shadow(0 0 4px #59cfe766)}
+.cp-lab-link.is-down path.react-flow__edge-path{filter:drop-shadow(0 0 3px #ff817d55)}
+@media(prefers-reduced-motion:reduce){.cp-lab-link.animated path{animation:none!important}}
+
+/* Guided automatic demos: local to power and DWDM labs */
+.cp-autolab-story{margin:18px 0 22px;padding:20px 23px;border:1px solid rgba(91,204,218,.36);border-radius:15px;background:linear-gradient(110deg,rgba(15,56,79,.88),rgba(9,34,54,.9));color:#e3f2fa}
+.cp-autolab-story__head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:13px;font-size:10px;font-weight:800;letter-spacing:.14em;color:#62dbe5}
+.cp-autolab-live{color:#66e6cb}.cp-autolab-paused{color:#f2be84}
+.cp-autolab-story>strong{display:block;font-size:clamp(16px,2vw,21px);line-height:1.35}
+.cp-autolab-story>p{margin:9px 0 18px;color:#b6ccdc;font-size:13px;line-height:1.65;max-width:850px}
+.cp-autolab-progress{display:flex;gap:7px;margin-bottom:16px}
+.cp-autolab-progress span{flex:1;height:4px;border-radius:5px;background:#284d65;transition:background .4s,box-shadow .4s}
+.cp-autolab-progress span.is-active{background:#62dbe5;box-shadow:0 0 13px rgba(98,219,229,.45)}
+.cp-autolab-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.cp-autolab-buttons button{border:1px solid #46728a;border-radius:9px;background:#173b53;color:#e0f0fa;font:inherit;font-size:12px;font-weight:700;padding:10px 14px;cursor:pointer}
+.cp-autolab-buttons button:hover,.cp-autolab-buttons button:focus-visible{border-color:#62dbe5;background:#20536b}
+@media(max-width:600px){.cp-autolab-story{padding:15px}.cp-autolab-story__head{font-size:9px;letter-spacing:.08em}}

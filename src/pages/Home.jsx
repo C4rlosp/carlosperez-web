@@ -8,27 +8,29 @@ const content = {
   es: {
     eyebrow: 'INGENIERÍA · INFRAESTRUCTURA · CONECTIVIDAD',
     greeting: 'Hola, soy',
+    role: 'INGENIERO DE REDES',
+    specialty: 'INFRAESTRUCTURA DE INTERNET',
     headline: 'De construir redes a',
     emphasis: 'transformar',
     ending: 'la manera en que conectamos.',
-    intro: 'Ingeniero de redes enfocado en infraestructura de Internet, interconexión, resiliencia y evolución tecnológica.',
+    intro: 'Ingeniero de redes especializado en infraestructura de Internet, interconexión y resiliencia, con una visión orientada a la innovación, automatización y transformación digital.',
     projects: 'Explorar proyectos',
     contact: 'Hablemos',
     explore: 'EXPLORAR',
-    aboutLabel: '01 / PERFIL',
+    aboutLabel: 'SOBRE MÍ',
     aboutTitle: 'La tecnología conecta. Las personas transforman.',
-    aboutText: 'Mi trayectoria combina experiencia práctica en infraestructura de telecomunicaciones, ingeniería de redes y colaboración con la comunidad técnica. Me interesa construir soluciones confiables y contribuir a un Internet más resiliente.',
-    expertiseLabel: '02 / ENFOQUE',
-    expertiseTitle: 'Donde la experiencia se convierte en impacto.',
+    aboutText: 'Mi camino comenzó trabajando directamente con la infraestructura que hace posibles las comunicaciones. Con los años, esa experiencia evolucionó hacia nuevos desafíos, proyectos de mayor alcance y una forma de entender la ingeniería que va más allá de la tecnología. Hoy combino experiencia, liderazgo y una convicción que me acompaña desde siempre: el conocimiento tiene más valor cuando se comparte.',
+    expertiseLabel: 'MI FILOSOFÍA',
+    expertiseTitle: 'La experiencia cambia la forma de ver los desafíos.',
     areas: [
-      ['01', 'Infraestructura de Internet', 'Arquitectura de redes, interconexión y operación de infraestructura crítica.'],
-      ['02', 'Routing y resiliencia', 'BGP, seguridad de enrutamiento, RPKI y continuidad operativa.'],
-      ['03', 'Innovación y automatización', 'Herramientas, observabilidad y procesos que hacen las redes más eficientes.']
+      ['01', 'Construir con propósito', 'Entender el problema antes de diseñar la solución. Crear infraestructura que responda a necesidades reales y pueda evolucionar.'],
+      ['02', 'Decidir con criterio', 'La experiencia enseña que no siempre gana la solución más compleja, sino la que aporta mayor valor y confianza.'],
+      ['03', 'Compartir para crecer', 'El conocimiento adquiere sentido cuando se comparte, abre oportunidades y ayuda a otros a avanzar.']
     ],
-    journeyLabel: '03 / TRAYECTORIA',
-    journeyTitle: 'Del trabajo en campo a la infraestructura que conecta redes.',
-    journeyText: 'Una trayectoria construida entre equipos, torres, centros de datos y comunidades técnicas.',
-    viewProjects: 'Conocer mis proyectos',
+    journeyLabel: 'MI CAMINO',
+    journeyTitle: 'Cada etapa ha dejado algo que vale la pena contar.',
+    journeyText: 'Antes de llegar hasta aquí hubo desafíos, aprendizajes y decisiones que transformaron mi manera de entender la ingeniería.',
+    viewProjects: 'Conocé mi historia',
     finalLabel: 'SIGAMOS CONECTANDO',
     finalTitle: 'Las mejores conexiones comienzan con una conversación.',
     finalButton: 'Contactarme'
@@ -36,27 +38,29 @@ const content = {
   en: {
     eyebrow: 'ENGINEERING · INFRASTRUCTURE · CONNECTIVITY',
     greeting: "Hi, I'm",
+    role: 'NETWORK ENGINEER',
+    specialty: 'INTERNET INFRASTRUCTURE',
     headline: 'From building networks to',
     emphasis: 'transforming',
     ending: 'the way we connect.',
-    intro: 'Network engineer focused on Internet infrastructure, interconnection, resilience, and technological evolution.',
+    intro: 'Network engineer specializing in Internet infrastructure, interconnection, and resilience, with a focus on innovation, automation, and digital transformation.',
     projects: 'Explore projects',
     contact: "Let's talk",
     explore: 'EXPLORE',
-    aboutLabel: '01 / PROFILE',
+    aboutLabel: 'ABOUT ME',
     aboutTitle: 'Technology connects. People transform.',
-    aboutText: 'My journey combines hands-on telecommunications infrastructure experience, network engineering, and collaboration with the technical community. I care about building reliable solutions and contributing to a more resilient Internet.',
-    expertiseLabel: '02 / FOCUS',
-    expertiseTitle: 'Where experience becomes impact.',
+    aboutText: 'My journey began working directly with the infrastructure that makes communication possible. Over the years, that experience evolved into new challenges, larger projects, and a way of understanding engineering that goes beyond technology. Today, I bring together experience, leadership, and a belief that has always guided me: knowledge becomes more valuable when it is shared.',
+    expertiseLabel: 'MY PHILOSOPHY',
+    expertiseTitle: 'Experience changes how we approach challenges.',
     areas: [
-      ['01', 'Internet infrastructure', 'Network architecture, interconnection, and critical infrastructure operations.'],
-      ['02', 'Routing and resilience', 'BGP, routing security, RPKI, and operational continuity.'],
-      ['03', 'Innovation and automation', 'Tools, observability, and processes that make networks more efficient.']
+      ['01', 'Build with purpose', 'Understand the problem before designing the solution. Create infrastructure that meets real needs and can evolve.'],
+      ['02', 'Decide with judgment', 'Experience teaches us that the most complex solution is not always the best, but the one that delivers value and inspires confidence.'],
+      ['03', 'Grow by sharing', 'Knowledge becomes meaningful when it is shared, creates opportunities, and helps others move forward.']
     ],
-    journeyLabel: '03 / JOURNEY',
-    journeyTitle: 'From fieldwork to the infrastructure connecting networks.',
-    journeyText: 'A journey built across equipment, towers, data centers, and technical communities.',
-    viewProjects: 'Explore my projects',
+    journeyLabel: 'MY JOURNEY',
+    journeyTitle: 'Every chapter has a story worth telling.',
+    journeyText: 'Behind where I am today are challenges, lessons, and decisions that transformed the way I understand engineering.',
+    viewProjects: 'Discover my story',
     finalLabel: "LET'S CONNECT",
     finalTitle: 'The best connections start with a conversation.',
     finalButton: 'Get in touch'
@@ -85,18 +89,22 @@ export default function Home() {
               <Link className="cp-btn cp-btn-primary" to="/projects">{c.projects}<span aria-hidden="true">↗</span></Link>
               <Link className="cp-btn cp-btn-secondary" to="/contact">{c.contact}<span aria-hidden="true">↗</span></Link>
             </div>
-            <div className="cp-hero-bottom">
-              <span>CP / 2026</span>
-              <span>{c.explore} ↓</span>
-            </div>
+
           </div>
           <div className="cp-hero-visual">
             <div className="cp-portrait-frame">
               <img src={photo('portrait-carlos.webp')} alt="Carlos Pérez, retrato profesional" />
             </div>
             <div className="cp-visual-caption">
-              <span className="cp-monogram" aria-label="Carlos Pérez">CP<span>.</span></span>
-              <span>NETWORK ENGINEERING<br />& INTERNET INFRASTRUCTURE</span>
+              <img
+                className="cp-signature-logo"
+                src={photo('brand/logos/cp-isotipo-limpio.png')}
+                alt="CP - Carlos Pérez"
+              />
+              <span className="cp-signature-text">
+                <strong>{c.role}</strong>
+                <small>{c.specialty}</small>
+              </span>
             </div>
           </div>
         </div>
@@ -119,10 +127,8 @@ export default function Home() {
           <div className="cp-expertise-grid">
             {c.areas.map(([number, title, description]) => (
               <article className="cp-expertise-card" key={number}>
-                <span className="cp-card-number">{number} /</span>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <span className="cp-card-arrow" aria-hidden="true">↗</span>
               </article>
             ))}
           </div>
@@ -147,7 +153,7 @@ export default function Home() {
               <img src={photo('04-tower-field-web.webp')} alt="Experiencia de campo en telecomunicaciones" loading="lazy" />
             </div>
           </div>
-          <Link to="/projects" className="cp-text-link">{c.viewProjects} <span aria-hidden="true">↗</span></Link>
+          <Link to="/history" className="cp-text-link">{c.viewProjects} <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 

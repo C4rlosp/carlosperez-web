@@ -1,0 +1,25 @@
+.cp-cap{background:#081a2d;color:#eaf5ff;padding:clamp(70px,8vw,118px) 0;font-family:Inter,system-ui,sans-serif}
+.cp-cap *{box-sizing:border-box}
+.cp-cap__wrap{width:min(1260px,calc(100% - 64px));margin:0 auto}
+.cp-cap__heading{max-width:860px;margin:0 0 45px}
+.cp-cap__eyebrow{color:#66c6ff;font-size:11px;font-weight:800;letter-spacing:.17em;margin:0 0 15px}
+.cp-cap__heading h2{font-family:Manrope,Inter,system-ui,sans-serif;font-size:clamp(31px,4vw,50px);line-height:1.15;letter-spacing:-.045em;margin:0 0 18px}
+.cp-cap__heading>p:last-child{color:#acc4d9;line-height:1.8;font-size:17px;margin:0}
+.cp-cap__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.cp-cap__card{--cp-accent:#63d9d2;position:relative;display:flex;flex-direction:column;min-width:0;padding:32px;border:1px solid #2d4b66;border-radius:18px;background:linear-gradient(155deg,#14334e,#0e243b 78%);overflow:hidden}
+.cp-cap__card:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:var(--cp-accent)}
+.cp-cap__card--violet{--cp-accent:#a99aff}.cp-cap__card--blue{--cp-accent:#6abfff}.cp-cap__card--green{--cp-accent:#72ddad}
+.cp-cap__top{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.cp-cap__number{font:800 22px Manrope,Inter,sans-serif;color:var(--cp-accent)}
+.cp-cap__category{font-size:10px;font-weight:800;letter-spacing:.11em;color:#9dbcd2}
+.cp-cap__card h3{font:750 clamp(23px,2.4vw,30px)/1.25 Manrope,Inter,sans-serif;letter-spacing:-.035em;margin:0 0 14px}
+.cp-cap__lead{color:#c3d9ea;font-size:15px;line-height:1.75;margin:0 0 24px}
+.cp-cap__details{display:grid;gap:17px;padding-top:22px;border-top:1px solid #2b4b66}
+.cp-cap__details h4{font-size:10px;letter-spacing:.13em;color:var(--cp-accent);margin:0 0 7px}
+.cp-cap__details p{font-size:13px;line-height:1.7;color:#b8cfe0;margin:0}
+.cp-cap__tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:25px}
+.cp-cap__tags span{font-size:11px;color:#cbe5f5;border:1px solid #365c78;border-radius:99px;padding:6px 10px;background:#183c58}
+.cp-cap__note{color:#829fb6;font-size:11px;line-height:1.6;margin:18px 0 0}
+.cp-cap__closing{max-width:850px;border-left:3px solid #63c6ff;padding-left:20px;color:#d4e9f6;font:600 clamp(17px,2vw,21px)/1.7 Manrope,Inter,sans-serif;margin:45px 0 0}
+@media(max-width:850px){.cp-cap__grid{grid-template-columns:1fr}.cp-cap__card{padding:27px}}
+@media(max-width:550px){.cp-cap__wrap{width:calc(100% - 32px)}.cp-cap__card{padding:22px}.cp-cap__heading{margin-bottom:30px}}

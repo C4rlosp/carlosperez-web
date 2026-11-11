@@ -4,7 +4,9 @@
     "projects": "Proyectos",
     "talks": "Charlas",
     "contact": "Contacto",
-    "articles": "Artículos"
+    "articles": "Artículos",
+    "history": "Mi historia",
+    "ideas": "Ideas"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -46,7 +48,6 @@
     "description": "Por Carlos Pérez / NIC - CRIX Costa Rica",
     "cta": "Leer Artículo Completo →"
   },
-
   "articleDetail": {
     "back": "← Volver",
     "label": "Seguridad RPKI",
@@ -269,21 +270,52 @@
     "form_message": "Mensaje",
     "send_btn": "Enviar Mensaje",
     "success_message": "¡Mensaje enviado exitosamente!",
-    "twitter": ""
+    "twitter": "",
+    "form_label": "Formulario de contacto",
+    "sending": "Enviando…",
+    "email_fallback": "Se intentó abrir tu aplicación de correo. El mensaje todavía no se ha enviado desde el sitio.",
+    "error_message": "No fue posible enviar el mensaje. Podés escribirme directamente a carlos@carlosperez.cr.",
+    "form_privacy": "Los datos se utilizan únicamente para responder tu consulta.",
+    "form_not_configured": "Al enviar, se abrirá tu aplicación de correo. Este formulario aún no envía mensajes directamente.",
+    "v2_eyebrow": "CONTACTO / CONEXIONES",
+    "v2_title_first": "Las buenas conexiones",
+    "v2_title_second": "comienzan conversando.",
+    "v2_description": "Las mejores ideas surgen cuando compartimos perspectivas. Si tenés un proyecto, una iniciativa o una conversación interesante por comenzar, me encantará conocerla.",
+    "v2_direct_label": "CONTACTO DIRECTO",
+    "v2_social_label": "EN OTROS ESPACIOS",
+    "v2_form_eyebrow": "INICIEMOS UNA CONVERSACIÓN",
+    "v2_form_title": "Contame tu idea.",
+    "v2_form_description": "Una colaboración, una charla o simplemente una buena pregunta. Todo comienza por aquí.",
+    "v2_name_placeholder": "¿Cómo te llamás?",
+    "v2_message_placeholder": "Contame un poco sobre lo que tenés en mente...",
+    "v2_bottom_left": "IDEAS / COLABORACIÓN / COMUNIDAD",
+    "v2_bottom_right": "COSTA RICA · CONECTADO CON EL MUNDO"
   },
   "footer": {
     "rights": "Todos los derechos reservados",
     "follow": "Conecta"
   },
   "skills": [
-  "Operación de IXP",
-  "Estrategia de Interconexión",
-  "BGP y Políticas de Enrutamiento",
-  "RPKI y Seguridad de Rutas",
-  "Operación de Centros de Datos",
-  "Automatización de Redes"
-],
+    "Operación de IXP",
+    "Estrategia de Interconexión",
+    "BGP y Políticas de Enrutamiento",
+    "RPKI y Seguridad de Rutas",
+    "Operación de Centros de Datos",
+    "Automatización de Redes"
+  ],
   "articles": {
     "subtitle": "Investigaciones y publicaciones sobre redes, seguridad y protocolos de internet."
+  },
+  "ideas": {
+    "eyebrow": "PERSPECTIVAS · EXPERIENCIA · COMUNIDAD",
+    "title": "Ideas que conectan.",
+    "intro": "La infraestructura de Internet también se construye compartiendo conocimiento, contrastando perspectivas y colaborando con otras personas.",
+    "featured": "LECTURA DESTACADA",
+    "read": "Explorar artículo",
+    "participation": "En conversación con la comunidad",
+    "participationIntro": "Una selección de encuentros donde la ingeniería se convierte en diálogo, aprendizaje y colaboración.",
+    "view": "Ver participación",
+    "closing": "Las mejores conversaciones comienzan con una idea.",
+    "contact": "Conversemos"
   }
 }

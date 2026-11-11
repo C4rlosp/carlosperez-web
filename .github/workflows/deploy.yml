@@ -34,6 +34,11 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
+        env:
+          # Public Formspree form ID; no secret is embedded here.
+          VITE_CONTACT_FORM_ENDPOINT: https://formspree.io/f/maeoyqab
+          # Keep the staging subpath until the custom-domain cutover.
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/carlosperez-web/' }}
         run: npm run build
 
       - name: Upload Pages artifact

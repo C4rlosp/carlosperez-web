@@ -4,3 +4,19 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Brand Book y archivos fuente privados
+/brand-assets/
+
+# Respaldos locales de desarrollo
+/.home-backups/
+
+/.venv/
+
+# Respaldos y archivos temporales locales
+/backups/
+/dcl-connector-fix-v2/
+/dcl-connector-refinement/
+*.bak
+*.pre-history
+*.before-*
