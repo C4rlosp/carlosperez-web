@@ -42,7 +42,7 @@ export default function Ideas() {
       <section id="lecturas" className="ideas-v2-feature" aria-labelledby="ideas-v2-feature-title">
         <div className="container">
           <div className="ideas-v2-section-top"><span>01 — {t('ideas.featured')}</span><span>{en ? 'Perspective' : 'Perspectiva'}</span></div>
-          <Link to="/article/rpki-ghost" className="ideas-v2-feature-link">
+          <Link to="/article/rpki-ghost/" className="ideas-v2-feature-link">
             <div className="ideas-v2-feature-art"><img src={publicAsset('/rpki-ghost-cover.png')} alt="" loading="lazy"/><span className="ideas-v2-art-caption">RPKI / BGP / ROUTING SECURITY</span></div>
             <div className="ideas-v2-feature-copy">
               <p className="ideas-v2-overline">{en ? 'Featured story' : 'Lectura destacada'}</p>
@@ -77,7 +77,7 @@ export default function Ideas() {
         </div>
       </section>
 
-      <section className="ideas-v2-outro"><div className="container ideas-v2-outro-inner"><p className="ideas-v2-overline">{en ? 'The conversation continues' : 'La conversación continúa'}</p><h2>{t('ideas.closing')}</h2><Link to="/contact">{t('ideas.contact')} <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="ideas-v2-outro"><div className="container ideas-v2-outro-inner"><p className="ideas-v2-overline">{en ? 'The conversation continues' : 'La conversación continúa'}</p><h2>{t('ideas.closing')}</h2><Link to="/contact/">{t('ideas.contact')} <span aria-hidden="true">↗</span></Link></div></section>
     </main>
   );
 }
