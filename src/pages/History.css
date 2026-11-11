@@ -340,3 +340,11 @@
     transition: none;
   }
 }
+
+/* CP-HISTORY-PHOTO-ALIGNMENT */
+@media (min-width: 901px) {
+  .cp-history-v2 .cp-story-now-photo {
+    transform: translateY(-140px);
+  }
+}
+/* END CP-HISTORY-PHOTO-ALIGNMENT */
