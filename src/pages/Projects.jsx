@@ -1,14 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { useState } from 'react';
-import DataCenterContinuityLab from '../components/DataCenterContinuityLab';
-import InternetJourney from '../components/InternetJourney';
+const DataCenterContinuityLab = lazy(() => import('../components/DataCenterContinuityLab'));
+const InternetJourney = lazy(() => import('../components/InternetJourney'));
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Projects.css';
-import NetworkEngineeringLab from '../components/NetworkEngineeringLab';
+const NetworkEngineeringLab = lazy(() => import('../components/NetworkEngineeringLab'));
 import EngineeringCapabilities from '../components/EngineeringCapabilities';
-import LibertyTrafficLab from '../components/LibertyTrafficLab';
+const LibertyTrafficLab = lazy(() => import('../components/LibertyTrafficLab'));
 
-import PowerReliabilityLab from '../components/PowerReliabilityLab';
+const PowerReliabilityLab = lazy(() => import('../components/PowerReliabilityLab'));
 const content = {
   es: {
     kicker: 'INGENIERÍA EN EL MUNDO REAL',
@@ -61,8 +62,8 @@ const content = {
     practiceKicker: 'DEL PROYECTO AL CRITERIO',
     practiceTitle: 'Experiencia aplicada. Conocimiento que se puede explorar.',
     practiceText: 'Estos entornos interactivos son simulaciones educativas desarrolladas para explicar decisiones de arquitectura, diagnóstico y operación. No representan sistemas productivos ni sustituyen la experiencia de los casos anteriores.',
-    lab1: 'Incorporación segura y observabilidad BGP',
-    lab1Text: 'Validación de redes, políticas de enrutamiento y aprobación humana antes de habilitar producción.',
+    lab1: 'Políticas y diagnóstico BGP',
+    lab1Text: 'Exploración educativa de políticas de rutas, diagnóstico de sesiones y observabilidad BGP.',
     lab2: 'Continuidad eléctrica',
     lab2Text: 'Principios generales de protección y continuidad de energía en infraestructura crítica.',
     lab3: 'Resiliencia de transporte',
@@ -130,8 +131,8 @@ const content = {
     practiceKicker: 'FROM EXPERIENCE TO EXPLORATION',
     practiceTitle: 'Applied experience. Knowledge you can explore.',
     practiceText: 'These interactive environments are educational simulations developed to explain architecture, troubleshooting, and operational decisions. They do not depict production systems or replace the experience described above.',
-    lab1: 'Secure onboarding and BGP observability',
-    lab1Text: 'Network validation, routing policies, and human authorization before production.',
+    lab1: 'BGP policies and diagnostics',
+    lab1Text: 'An educational exploration of routing policies, session diagnostics, and BGP observability.',
     lab2: 'Power continuity',
     lab2Text: 'General principles of electrical protection and power continuity in critical infrastructure.',
     lab3: 'Transport resilience',
@@ -261,11 +262,13 @@ export default function Projects() {
         {selectedLab !== null && (
           <div className="cp-v2-selected-lab" key={`${lang}-${selectedLab}`}>
             <div className="cp-v2-selected-lab-bar"><strong>{c[`lab${selectedLab}`]}</strong><button type="button" onClick={() => setSelectedLab(null)}>{lang === 'es' ? 'Cerrar demostración' : 'Close demonstration'} <span aria-hidden="true">×</span></button></div>
+            <Suspense fallback={<p role="status" aria-live="polite">{lang === 'en' ? 'Loading interactive lab…' : 'Cargando laboratorio interactivo…'}</p>}>
             {selectedLab === 1 && <NetworkEngineeringLab />}
             {selectedLab === 2 && <PowerReliabilityLab language={lang} />}
             {selectedLab === 3 && <LibertyTrafficLab lang={lang} />}
             {selectedLab === 4 && <InternetJourney language={lang} />}
             {selectedLab === 5 && <DataCenterContinuityLab language={lang} />}
+            </Suspense>
           </div>
         )}
       </section>

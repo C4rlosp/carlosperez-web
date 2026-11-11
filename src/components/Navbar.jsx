@@ -19,7 +19,13 @@ export default function Navbar() {
   }, [location]);
 
   const toggleLang = () => {
-    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
+    const nextLanguage = i18n.resolvedLanguage?.startsWith('en') ? 'es' : 'en';
+    i18n.changeLanguage(nextLanguage);
+    try {
+      localStorage.setItem('lang', nextLanguage);
+    } catch {
+      // Language still changes if browser storage is unavailable.
+    }
   };
 
   const links = [
