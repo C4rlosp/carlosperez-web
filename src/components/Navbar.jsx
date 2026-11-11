@@ -19,13 +19,13 @@ export default function Navbar() {
   }, [location]);
 
   const toggleLang = () => {
-    const nextLanguage = i18n.resolvedLanguage?.startsWith('en') ? 'es' : 'en';
-    i18n.changeLanguage(nextLanguage);
-    try {
-      localStorage.setItem('lang', nextLanguage);
-    } catch {
-      // Language still changes if browser storage is unavailable.
-    }
+    // Router basename strips /en from location.pathname; use the actual URL.
+    const onEnglishRoute = typeof window !== 'undefined' && /^\/en(?:\/|$)/.test(window.location.pathname);
+    const nextLanguage = onEnglishRoute ? 'es' : 'en';
+    try { window.localStorage.setItem('lang', nextLanguage); } catch { /* optional */ }
+    const path = location.pathname === '/' ? '/' : `${location.pathname.replace(/\/$/, '')}/`;
+    const target = `${nextLanguage === 'en' ? '/en' : ''}${path}${window.location.search}${window.location.hash}`;
+    window.location.assign(target);
   };
 
   const links = [

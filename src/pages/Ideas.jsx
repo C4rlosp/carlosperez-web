@@ -18,7 +18,7 @@ function EventLinks({ talk, view, slides, video }) {
 
 export default function Ideas() {
   const { t, i18n } = useTranslation();
-  const en = i18n.resolvedLanguage?.startsWith('en');
+  const en = i18n.language?.startsWith('en');
   const items = t('talks.items', { returnObjects: true });
   const talks = Array.isArray(items) ? FEATURED_EVENTS.map(event => items.find(item => item.event === event)).filter(Boolean) : [];
   const [mainTalk, ...otherTalks] = talks;

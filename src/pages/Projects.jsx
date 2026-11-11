@@ -184,7 +184,7 @@ function CaseStudy({ item, chapter, flipped }) {
 
 export default function Projects() {
   const { i18n } = useTranslation();
-  const lang = i18n.resolvedLanguage?.startsWith('en') ? 'en' : 'es';
+  const lang = i18n.language?.startsWith('en') ? 'en' : 'es';
   const c = content[lang];
   const [selectedLab, setSelectedLab] = useState(null);
 
