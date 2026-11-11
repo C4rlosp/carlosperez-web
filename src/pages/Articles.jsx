@@ -6,7 +6,7 @@ export default function Articles() {
 
   const articles = [
     {
-      slug: '/article/rpki-ghost',
+      slug: '/article/rpki-ghost/',
       label: t('article.label'),
       title: t('article.title'),
       description: t('article.description'),

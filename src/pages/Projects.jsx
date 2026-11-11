@@ -237,7 +237,7 @@ export default function Projects() {
             ))}
           </div>
           <p className="cp-v2-services-note">{c.serviceNote}</p>
-          <Link className="cp-v2-services-link" to="/contact">{c.cta}<span aria-hidden="true">↗</span></Link>
+          <Link className="cp-v2-services-link" to="/contact/">{c.cta}<span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
@@ -290,7 +290,7 @@ export default function Projects() {
       <section className="cp-v2-contact">
         <div className="cp-v2-wrap cp-v2-contact-grid">
           <div><h2>{c.endTitle}</h2><p>{c.endText}</p></div>
-          <Link to="/contact" className="cp-v2-button">{c.cta}<span aria-hidden="true">↗</span></Link>
+          <Link to="/contact/" className="cp-v2-button">{c.cta}<span aria-hidden="true">↗</span></Link>
         </div>
       </section>
     </main>

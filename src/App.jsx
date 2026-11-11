@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import './i18n';
 import './index.css';
@@ -25,6 +25,23 @@ function ScrollToTop() {
   return null;
 }
 
+// Read browser preferences only after React has hydrated the server HTML.
+// Changing i18n before hydration finishes can cause React #418/#423.
+function RestoreSavedLanguage() {
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem('lang');
+      if ((saved === 'es' || saved === 'en') && saved !== i18n.language) {
+        i18n.changeLanguage(saved);
+      }
+    } catch {
+      // Storage may be unavailable; Spanish remains the default.
+    }
+  }, [i18n]);
+  return null;
+}
+
 function DocumentLanguage() {
   const { i18n } = useTranslation();
 
@@ -37,6 +54,7 @@ function DocumentLanguage() {
 
 function PageMetadata() {
   const { pathname } = useLocation();
+  const routePath = pathname.replace(/\/$/, '') || '/';
   const { i18n } = useTranslation();
   const en = i18n.resolvedLanguage?.startsWith('en');
   useEffect(() => {
@@ -57,10 +75,13 @@ function PageMetadata() {
         ? ['Contact | Carlos Pérez', 'Let’s talk about technology, infrastructure, and engineering collaboration.']
         : ['Contacto | Carlos Pérez', 'Conversemos sobre tecnología, infraestructura y colaboración en ingeniería.']
     };
-    const [title, description] = metadata[pathname] || (en
+    const [title, description] = metadata[routePath] || (en
       ? ['Carlos Pérez | Technology & Infrastructure', 'Technology, infrastructure, and engineering experience.']
       : ['Carlos Pérez | Tecnología e infraestructura', 'Tecnología, infraestructura y experiencia en ingeniería.']);
     document.title = title;
+    const canonicalUrl = `https://carlosperez.cr${routePath === '/' ? '/' : `${routePath}/`}`;
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);
     for (const [selector, attribute] of [
       ['meta[name="description"]', 'content'],
       ['meta[property="og:description"]', 'content'],
@@ -70,7 +91,7 @@ function PageMetadata() {
     }
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
-  }, [pathname, en]);
+  }, [routePath, en]);
   return null;
 }
 
@@ -119,9 +140,10 @@ function Footer() {
   );
 }
 
-export default function App() {
+export function AppContent() {
   return (
-    <HashRouter>
+    <>
+      <RestoreSavedLanguage />
       <DocumentLanguage />
       <PageMetadata />
       <ScrollToTop />
@@ -129,13 +151,13 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/ideas" element={<Ideas />} />
-        <Route path="/talks" element={<Navigate to="/ideas" replace />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/articles" element={<Navigate to="/ideas" replace />} />
-        <Route path="/article/rpki-ghost" element={<ArticleDetail />} />
+        <Route path="/projects/" element={<Projects />} />
+        <Route path="/history/" element={<History />} />
+        <Route path="/ideas/" element={<Ideas />} />
+        <Route path="/talks" element={<Navigate to="/ideas/" replace />} />
+        <Route path="/contact/" element={<Contact />} />
+        <Route path="/articles" element={<Navigate to="/ideas/" replace />} />
+        <Route path="/article/rpki-ghost/" element={<ArticleDetail />} />
       </Routes>
 
       <Footer />
@@ -152,6 +174,10 @@ export default function App() {
         pauseOnHover
         theme="dark"
       />
-    </HashRouter>
+    </>
   );
+}
+
+export default function App() {
+  return <BrowserRouter><AppContent /></BrowserRouter>;
 }

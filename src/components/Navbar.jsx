@@ -30,10 +30,10 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: t('nav.home') },
-    { to: '/history', label: t('nav.history') },
-    { to: '/projects', label: t('nav.projects') },
-    { to: '/ideas', label: t('nav.ideas') },
-    { to: '/contact', label: t('nav.contact') },
+    { to: '/history/', label: t('nav.history') },
+    { to: '/projects/', label: t('nav.projects') },
+    { to: '/ideas/', label: t('nav.ideas') },
+    { to: '/contact/', label: t('nav.contact') },
   ];
 
   return (

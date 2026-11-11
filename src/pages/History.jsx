@@ -130,7 +130,7 @@ export default function History() {
           <p className="cp-story-kicker">{c.futureLabel}</p>
           <h2>{c.futureTitle}</h2>
           <p>{c.futureText}</p>
-          <Link to="/projects" className="cp-story-next">
+          <Link to="/projects/" className="cp-story-next">
             {c.nextButton}
             <span aria-hidden="true">↗</span>
           </Link>
