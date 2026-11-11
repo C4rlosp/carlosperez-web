@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           <div className="cp-hero-visual">
             <div className="cp-portrait-frame">
-              <img src={photo('portrait-carlos.webp')} alt="Carlos Pérez, retrato profesional" />
+              <img src={photo('portrait-carlos-brazos-cruzados.webp')} alt="Carlos Pérez, retrato profesional" />
             </div>
             <div className="cp-visual-caption">
               <img
