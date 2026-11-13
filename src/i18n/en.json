@@ -94,7 +94,9 @@
       },
       {
         "type": "image",
-        "src": "/rpki_tables.png",
+        "src": "/rpki_tables.webp",
+        "width": 1300,
+        "height": 632,
         "alt": "BIRD Tables",
         "caption": "Figure 1 – Real BIRD output showing differences between old and updated validators.",
         "terminal": true
@@ -105,7 +107,9 @@
       },
       {
         "type": "image",
-        "src": "/rpki_roa_imported_only.png",
+        "src": "/rpki_roa_imported_only.webp",
+        "width": 1300,
+        "height": 813,
         "alt": "Imported ROAs",
         "caption": "Figure 2 – Comparison of the number of ROAs imported by FORT v1.0 and v1.6 (IPv4 and IPv6).",
         "subcaption": "The older version loses a large amount of data due to incomplete RRDP support."
@@ -116,7 +120,9 @@
       },
       {
         "type": "image",
-        "src": "/rpki_roa_comparison.png",
+        "src": "/rpki_roa_comparison.webp",
+        "width": 1300,
+        "height": 813,
         "alt": "Imported vs Preferred",
         "caption": "Figure 3 – Comparison between imported ROAs and preferred ROAs. FORT v1.0 shows major inconsistencies that reveal degraded validation (Ghost RPKI)."
       },

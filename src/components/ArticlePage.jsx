@@ -16,7 +16,14 @@ function Block({ block, index }) {
     case 'image': return (
       <figure className="cp-article-figure">
         <a href={publicAsset(block.src)} target="_blank" rel="noopener noreferrer" aria-label={block.alt || 'Abrir imagen en tamaño original'} className="cp-article-image-link">
-          <img src={publicAsset(block.src)} alt={block.alt || ''} loading="lazy" decoding="async" />
+          <img
+            src={publicAsset(block.src)}
+            alt={block.alt || ''}
+            width={block.width}
+            height={block.height}
+            loading="lazy"
+            decoding="async"
+          />
         </a>
         {(block.caption || block.subcaption) && <figcaption>
           {block.caption && <span>{block.caption}</span>}
