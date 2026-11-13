@@ -148,11 +148,11 @@
 .cp-btn:hover { transform: translateY(-2px); }
 
 .cp-btn-primary {
-  background: var(--cp-blue);
+  background: #076DC5;
   color: #fff;
 }
 
-.cp-btn-primary:hover { background: #168AE8; }
+.cp-btn-primary:hover { background: #075FAE; }
 
 .cp-btn-secondary {
   border: 1px solid #405875;
@@ -247,7 +247,7 @@
 
 .cp-about .cp-section-kicker,
 .cp-journey .cp-section-kicker {
-  color: var(--cp-blue);
+  color: #076DC5;
 }
 
 .cp-about-grid {

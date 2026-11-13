@@ -1005,7 +1005,7 @@ body::after {
   align-items: center;
   justify-content: space-between;
   font-size: 0.82rem;
-  color: var(--text-dim);
+  color: #8796A6;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
