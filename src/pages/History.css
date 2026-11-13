@@ -25,7 +25,7 @@
 .cp-story-kicker {
   font: 500 11px/1.7 'JetBrains Mono', monospace;
   letter-spacing: .12em;
-  color: var(--story-blue);
+  color: #076DC5;
 }
 
 .cp-story-hero {
@@ -220,7 +220,7 @@
   margin-top: 38px;
   padding: 17px 23px;
   border-radius: 8px;
-  background: var(--story-blue);
+  background: #076DC5;
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
