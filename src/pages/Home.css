@@ -339,14 +339,14 @@
   align-items: center;
   gap: 18px;
   margin-top: 34px;
-  color: var(--cp-blue);
+  color: #076DC5;
   font-size: 15px;
   font-weight: 700;
 }
 
 .cp-contact-strip {
   padding: 75px 0;
-  background: var(--cp-blue);
+  background: #076DC5;
 }
 
 .cp-contact-inner {
