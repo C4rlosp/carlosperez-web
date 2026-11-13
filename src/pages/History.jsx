@@ -75,7 +75,10 @@ export default function History() {
             <img
               src={asset('portrait-carlos.webp')}
               alt="Carlos Pérez"
-              loading="lazy"
+              width={1024}
+              height={1536}
+              loading="eager"
+              decoding="async"
             />
           </div>
         </div>
