@@ -77,7 +77,7 @@ export default function History() {
               alt="Carlos Pérez"
               width={1024}
               height={1536}
-              loading="eager"
+              loading="lazy"
               decoding="async"
             />
           </div>
