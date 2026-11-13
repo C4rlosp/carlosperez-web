@@ -5,6 +5,16 @@ import './Ideas.css';
 
 const FEATURED_EVENTS = ['Euro-IX 43', 'LACNIC 44 LAC-IX Technical Meeting', 'Texas Tech University'];
 
+const optimizedEventImage = (image) => {
+  const webpImages = {
+    '/euroix43.jpg': '/euroix43.webp',
+    '/lacnic.jpg': '/lacnic.webp',
+    '/texastech.jpg': '/texastech.webp',
+  };
+
+  return publicAsset(webpImages[image] || image);
+};
+
 function EventLinks({ talk, view, slides, video }) {
   const links = [
     talk.Publicacion && { href: talk.Publicacion, text: view },
@@ -12,7 +22,7 @@ function EventLinks({ talk, view, slides, video }) {
     talk.video && { href: talk.video, text: video },
   ].filter(Boolean);
   return links.length ? <div className="ideas-v2-links">{links.map(link => (
-    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.text} <span aria-hidden="true">↗</span></a>
+    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`${link.text}: ${talk.event}`}>{link.text} <span aria-hidden="true">↗</span></a>
   ))}</div> : null;
 }
 
@@ -26,7 +36,17 @@ export default function Ideas() {
   return (
     <main className="ideas-v2">
       <header className="ideas-v2-hero">
-        <div className="ideas-v2-hero-photo" aria-hidden="true"><img src={publicAsset('/euro-ix-45-NL.jpeg')} alt="" fetchPriority="high" /></div>
+        <div className="ideas-v2-hero-photo" aria-hidden="true"><img
+          src={publicAsset('/euro-ix-45-NL.jpeg')}
+          srcSet={`${publicAsset('/euro-ix-45-NL-800.webp')} 800w, ${publicAsset('/euro-ix-45-NL.jpeg')} 1290w`}
+          sizes="(max-width: 850px) 100vw, 56vw"
+          width="1290"
+          height="965"
+          alt=""
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+        /></div>
         <div className="ideas-v2-hero-shade" aria-hidden="true" />
         <div className="container ideas-v2-hero-layout">
           <div className="ideas-v2-hero-copy">
@@ -43,7 +63,7 @@ export default function Ideas() {
         <div className="container">
           <div className="ideas-v2-section-top"><span>01 — {t('ideas.featured')}</span><span>{en ? 'Perspective' : 'Perspectiva'}</span></div>
           <Link to="/article/rpki-ghost/" className="ideas-v2-feature-link">
-            <div className="ideas-v2-feature-art"><img src={publicAsset('/rpki-ghost-cover.png')} alt="" loading="lazy"/><span className="ideas-v2-art-caption">RPKI / BGP / ROUTING SECURITY</span></div>
+            <div className="ideas-v2-feature-art"><img src={publicAsset('/rpki-ghost-cover.webp')} width="1024" height="1024" alt="" loading="lazy" decoding="async"/><span className="ideas-v2-art-caption">RPKI / BGP / ROUTING SECURITY</span></div>
             <div className="ideas-v2-feature-copy">
               <p className="ideas-v2-overline">{en ? 'Featured story' : 'Lectura destacada'}</p>
               <h2 id="ideas-v2-feature-title">{t('article.title')}</h2>
@@ -62,7 +82,7 @@ export default function Ideas() {
             <p>{t('ideas.participationIntro')}</p>
           </div>
           {mainTalk && <article className="ideas-v2-main-event">
-            <div className="ideas-v2-main-photo"><img src={publicAsset(mainTalk.images?.[0] || '/euroix43.jpg')} alt={mainTalk.event} loading="lazy"/><span className="ideas-v2-photo-index">01 / 03</span></div>
+            <div className="ideas-v2-main-photo"><img src={optimizedEventImage(mainTalk.images?.[0] || '/euroix43.jpg')} alt={mainTalk.event} loading="lazy"/><span className="ideas-v2-photo-index">01 / 03</span></div>
             <div className="ideas-v2-main-description">
               <p className="ideas-v2-overline">{mainTalk.event} <span>·</span> {mainTalk.year}</p>
               <h3>{mainTalk.title}</h3>
@@ -71,7 +91,7 @@ export default function Ideas() {
             </div>
           </article>}
           <div className="ideas-v2-other-events">{otherTalks.map((talk, index) => <article className="ideas-v2-small-event" key={talk.event}>
-            <div className="ideas-v2-small-photo"><img src={publicAsset(talk.images?.[0])} alt={talk.event} loading="lazy"/><span className="ideas-v2-photo-index">0{index + 2} / 03</span></div>
+            <div className="ideas-v2-small-photo"><img src={optimizedEventImage(talk.images?.[0])} alt={talk.event} loading="lazy"/><span className="ideas-v2-photo-index">0{index + 2} / 03</span></div>
             <div className="ideas-v2-small-copy"><p className="ideas-v2-overline">{talk.event} <span>·</span> {talk.year}</p><h3>{talk.title}</h3><EventLinks talk={talk} view={t('ideas.view')} slides={t('talks.slides')} video={t('talks.video')}/></div>
           </article>)}</div>
         </div>
