@@ -57,7 +57,7 @@
 .cp-v2-contact-grid {display:flex;justify-content:space-between;align-items:center;gap:55px}
 .cp-v2-contact h2 {font-size:clamp(34px,3.8vw,51px);max-width:700px;margin-bottom:17px}
 .cp-v2-contact p {font-size:16px;line-height:1.8;color:var(--muted);max-width:660px}
-.cp-v2-button {flex:0 0 auto;display:inline-flex;align-items:center;justify-content:space-between;gap:35px;padding:19px 25px;min-width:190px;background:#087cdd;color:#fff;border-radius:7px;text-decoration:none;font-weight:700;font-size:14px;transition:background .2s ease}
+.cp-v2-button {flex:0 0 auto;display:inline-flex;align-items:center;justify-content:space-between;gap:35px;padding:19px 25px;min-width:190px;background:#076DC5;color:#fff;border-radius:7px;text-decoration:none;font-weight:700;font-size:14px;transition:background .2s ease}
 .cp-v2-button:hover {background:#0666b8}
 .cp-v2-button:focus-visible,.cp-v2-explore:focus-visible {outline:3px solid #4bb6ff;outline-offset:4px}
 @media(max-width:1000px){
@@ -121,7 +121,7 @@
 .cp-v2-service h3{font-size:21px;line-height:1.35;letter-spacing:-.035em;margin:23px 0 13px}
 .cp-v2-service p{font-size:14px;line-height:1.8;color:#526981}
 .cp-v2-services-note{margin-top:24px!important;color:#64748B;font-size:12px;line-height:1.7}
-.cp-v2-services-link{display:inline-flex;align-items:center;gap:24px;margin-top:26px;text-decoration:none;font-weight:750;font-size:14px;color:#0878D8;border-bottom:1px solid #0878D8;padding-bottom:8px}
+.cp-v2-services-link{display:inline-flex;align-items:center;gap:24px;margin-top:26px;text-decoration:none;font-weight:750;font-size:14px;color:#076DC5;border-bottom:1px solid #076DC5;padding-bottom:8px}
 .cp-v2-services-link:hover{color:#142B49}
 .cp-v2-practice{background:#0B1628}
 .cp-v2-practice-heading{padding:100px 0 72px}
