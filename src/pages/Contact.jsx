@@ -10,7 +10,7 @@ export default function Contact() {
   const endpoint = import.meta.env.VITE_CONTACT_FORM_ENDPOINT?.trim();
   const emailAddress = t('contact.email');
   const socials = [
-    { name: 'GitHub', description: '@C4rlosp', url: t('contact.github'), icon: <FaGithub /> },
+    { name: 'GitHub', description: '@carlosperezcr', url: t('contact.github'), icon: <FaGithub /> },
     { name: 'LinkedIn', description: 'Carlos Pérez', url: t('contact.linkedin'), icon: <FaLinkedin /> },
     { name: 'YouTube', description: '@CarlosPerezP', url: t('contact.youtube'), icon: <FaYoutube /> },
   ];
