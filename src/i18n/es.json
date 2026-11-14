@@ -178,7 +178,7 @@
           "BGP",
           "ZABBIX"
         ],
-        "repo": "https://github.com/C4rlosp/zabbix-bgp-monitoring-bird"
+        "repo": "https://github.com/carlosperezcr/zabbix-bgp-monitoring-bird"
       },
       {
         "title": "zabbix-bgp-ipv4-ipv6-monitoring",
@@ -188,7 +188,7 @@
           "CISCO",
           "SNMP"
         ],
-        "repo": "https://github.com/C4rlosp/zabbix-bgp-ipv4-ipv6-monitoring"
+        "repo": "https://github.com/carlosperezcr/zabbix-bgp-ipv4-ipv6-monitoring"
       },
       {
         "title": "nettools-pro",
@@ -198,7 +198,7 @@
           "Tools",
           "Testing"
         ],
-        "repo": "https://github.com/C4rlosp/nettools-pro"
+        "repo": "https://github.com/carlosperezcr/nettools-pro"
       }
     ]
   },
@@ -268,7 +268,7 @@
     "title": "Hablemos!",
     "subtitle": "Estoy abierto a colaboraciones, charlas y nuevas oportunidades.",
     "email": "carlos@carlosperez.cr",
-    "github": "https://github.com/C4rlosp",
+    "github": "https://github.com/carlosperezcr",
     "linkedin": "https://www.linkedin.com/in/carlos-ernesto-pérez-pérez-442900123",
     "youtube": "https://www.youtube.com/@CarlosPerezP",
     "form_name": "Nombre",
